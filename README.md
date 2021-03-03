@@ -6,7 +6,8 @@ We examine the detailed scenario for implementing n-control-qubit Toffoli gates 
 ## Overview
 
 In Numerical Results section, we have simulated the model for various cases and have generated plots and tables to describe our observations. The data for these results have been stored in .mat files in this repository with descriptions of data files listed below. 
-Unless specified, each of the data files have probability data points (named "Prob") and corresponding discrete times (named "t"). The probability data set, "Prob", is in matrix form with rows representing different combinations of ion states. For n=2 Bit Toffoli Gates, we have total of 3 ions and thus, there are 8 possible states. In such cases, the probability data set has 8 rows with each row representing the probability of ions to be in states |-,-,->, |-,+,->, |-,-,+>, |-,+,+>, |+,-,->, |+,+,->, |+,-,+> and |+,+,+> respectively, at a given time. 
+Unless specified, each of the data files have probability data points (named "Prob") and corresponding discrete times (named "t"). The probability data set, "Prob", is in matrix form with rows representing different combinations of ion states. For n=2 Bit Toffoli Gates, we have total of 3 ions and thus, there are 8 possible states. In such cases, the probability data set has 8 rows with each row representing the probability of ions to be in states 
+|-,-,->, |-,+,->, |-,-,+>, |-,+,+>, |+,-,->, |+,+,->, |+,-,+> and |+,+,+> respectively, at a given time. 
 
 ### Static vs. Time-Dependent Exchange Couplings (J)
 
@@ -17,8 +18,8 @@ All the simulations and data after this has Time-Dependent Exchange Couplings on
 
 ### B<sub>y</sub> and &mu; Dependence
 
-* `760By.mat`: Includes time-evolution of 2-Bit i-Toffoli Gate when B<sub>y</sub>/&hbar;=2&pi; x759.8Hz and &mu;=1.0095&omega;<sub>CM</sub>. Used in Figure 3a and Table 1.
-* `7600By.mat`: Includes time-evolution of 2-Bit i-Toffoli Gate when B<sub>y</sub>/&hbar;=2&pi; x7598Hz and &mu;=1.0095&omega<sub>CM</sub>. Used in Figure 3b and Table 1. 
+* `760By.mat`: Includes time-evolution of 2-Bit i-Toffoli Gate when B<sub>y</sub>/&hbar;=2&pi; x759.8Hz & &mu;=1.0095&omega;<sub>CM</sub>. Used in Figure 3a and Table 1.
+* `7600By.mat`: Includes time-evolution of 2-Bit i-Toffoli Gate when B<sub>y</sub>/&hbar;=2&pi; x7598Hz & &mu;=1.0095&omega<sub>CM</sub>. Used in Figure 3b and Table 1. 
 * `mu10380.mat`: Includes time-evolution of 2-Bit i-Toffoli Gate when &mu;=1.0380&omega;<sub>CM</sub> and B<sub>y</sub>/&hbar;=2&pi; x75.98Hz. Used in Figure 4a.
 * `mu10665.mat`: Includes time-evolution of 2-Bit i-Toffoli Gate when &mu;=1.0665&omega;<sub>CM</sub> and B<sub>y</sub>/&hbar;=2&pi; x75.98Hz. Used in Figure 4b.
 * `mu10950.mat`: Includes time-evolution of 2-Bit i-Toffoli Gate when &mu;=1.0950&omega;<sub>CM</sub> and B<sub>y</sub>/&hbar;=2&pi; x75.98Hz. Used in Figure 4c.
