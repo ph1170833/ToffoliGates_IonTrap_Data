@@ -5,31 +5,31 @@ We examine the detailed scenario for implementing n-control-qubit Toffoli gates 
 
 ## Overview
 
-* `IdentitySequenceGeneration.ipynb`: Generates sequences of U2/U3 gates of a given length, such that the action of the sequence is equivalent to an identity gate.
-* `finding_gaps.ipynb`: Finds Matrix visualisation of circuit gaps for any given quantum circuit on any required backend.
-* `padding.ipynb`: Pads the circuit gaps in a given quantum circuit with identity sequences.
-* `error_padding.ipynb`: Evaluates the error in a given gapped circuit and its padded version.
+In Numerical Results section, we have simulated the model for various cases and have generated plots and tables to describe our observations. The data for these results have been stored in .mat files in this repository with descriptions of data files listed below. 
+Unless specified, each of the data files have probability data points (named "Prob") and corresponding discrete times (named "t"). The probability data set, "Prob", is in matrix form with rows representing different combinations of ion states. For n=2 Bit Toffoli Gates, we have total of 3 ions and thus, there are 8 possible states. In such cases, the probability data set has 8 rows with each row representing the probability of ions to be in states |-,-,->, |-,+,->, |-,-,+>, |-,+,+>, |+,-,->, |+,+,->, |+,-,+> and |+,+,+> respectively, at a given time. 
 
-### Timed Padding
+### Static vs. Time-Dependent Exchange Couplings (J)
 
-* `backend_times.ipynb`: Can be used to obtain gate execution times for any backend.
-* `finding_timed_gapsOurense.ipynb`: Finds circuit gaps according to gate execution times, designed specifically for Ourense.
-* `finding_small_timed_gapsOurense.ipynb`: Reduces matrix visualization of timed circuit gaps produced by `finding_timed_gapsOurense.ipynb` to more compact form, designed specifically for Ourense.
-* `timed_padding.ipynb`: Pads the circuit gaps according to gate execution times, designed specifically for Ourense.
+* `StaticCoupling.mat`: Includes time-evolution of 2-Bit i-Toffoli Gate when Exchange Coupling is Static. B<sub>y</sub>/&hbar;=2&pi; x75.98Hz and &mu;=1.0095&omega;<sub>CM</sub>. Used in Figure 1. 
+* `TimeDepCoupling.mat`: Includes time-evolution of 2-Bit i-Toffoli Gate when Exchange Coupling is Time-Dependent. B<sub>y</sub>/&hbar;=2&pi; x75.98Hz and &mu;=1.0095&omega;<sub>CM</sub>. Used in Figure 2. 
 
-### Gate Error Statistics
+All the simulations and data after this has Time-Dependent Exchange Couplings only to keep the model closer to real case.
 
-* `U3vsU2_multipleruns.ipynb`: Compares error statistics for execution of U3 and U2 gates on a given backend. 
-* `VigoErrorStats_Lambda.ipynb`: Finds the error statistics of U3 gate as function of parameter Lambda and Phi for Vigo.
-* `VigoErrorStats_Theta.ipynb`: Finds the error statistics of U3 gate as function of parameter Theta and Phi for Vigo.
-* `3DplotsErrorStats.ipynb`: Uses data from error statistics to get surface plots of noise to obtain optimization points.
+### B<sub>y</sub> and &mu; Dependence
 
-### Reduced Padding
+* `760By.mat`: Includes time-evolution of 2-Bit i-Toffoli Gate when B<sub>y</sub>/&hbar;=2&pi; x759.8Hz and &mu;=1.0095&omega;<sub>CM</sub>. Used in Figure 3a and Table 1.
+* `7600By.mat`: Includes time-evolution of 2-Bit i-Toffoli Gate when B<sub>y</sub>/&hbar;=2&pi; x7598Hz and &mu;=1.0095&omega<sub>CM</sub>. Used in Figure 3b and Table 1. 
+* `mu10380.mat`: Includes time-evolution of 2-Bit i-Toffoli Gate when &mu;=1.0380&omega;<sub>CM</sub> and B<sub>y</sub>/&hbar;=2&pi; x75.98Hz. Used in Figure 4a.
+* `mu10665.mat`: Includes time-evolution of 2-Bit i-Toffoli Gate when &mu;=1.0665&omega;<sub>CM</sub> and B<sub>y</sub>/&hbar;=2&pi; x75.98Hz. Used in Figure 4b.
+* `mu10950.mat`: Includes time-evolution of 2-Bit i-Toffoli Gate when &mu;=1.0950&omega;<sub>CM</sub> and B<sub>y</sub>/&hbar;=2&pi; x75.98Hz. Used in Figure 4c.
 
-* `ThresholdPadding.ipynb`: Uses parameters threshold and force_threshold to reduce the amount of padding in a given circuit gap.
-* `ReducedSpreadPadding_FixDepth_Vigo.ipynb`: Implements reduced padding with gates spread over the gap. The data is collected by varying the type of gap but keeping the gap length as fixed and equal to 20. Implemented on Vigo. 
-* `ReducedSpreadPad_VarDepth_Half_Vigo.ipynb`: Implements reduced padding with gates spread over the gap. The data is collected by varying the length of gap (depth) but keeping the type of circuit as fixed. The maximum padding length is only half of the gap length. Implemented on Vigo.
-* `ReducedSpreadPad_VarDepth_Full_Vigo.ipynb`: Implements reduced padding with gates spread over the gap. The data is collected by varying the length of gap (depth) but keeping the type of circuit as fixed. The maximum padding length is equal to the gap length. Implemented on Vigo.
-* `VarDepth_DataAnalysis.ipynb`: Uses data from Variable Depth codes to obtain error reduction plots.
+### n-Bit i-Toffoli Gate
 
+### Select Gate
 
+The following data has been used in Table 5.
+
+* `Select4J.mat`: Includes time-evolution of 2-Bit i-Select Gate when B<sub>y</sub>/&hbar=4J. B<sub>y</sub>/&hbar;=2&pi; x75.98Hz and &mu;=0.9905&omega;<sub>ZZ</sub>.
+* `Select12J.mat`: Includes time-evolution of 2-Bit i-Select Gate when B<sub>y</sub>/&hbar=12J. B<sub>y</sub>/&hbar;=2&pi; x75.98Hz and &mu;=0.9905&omega;<sub>ZZ</sub>. Used in Figure 6.
+* `Select-12J.mat`: Includes time-evolution of 2-Bit i-Select Gate when B<sub>y</sub>/&hbar=-12J. B<sub>y</sub>/&hbar;=2&pi; x75.98Hz and &mu;=0.9905&omega;<sub>ZZ</sub>.
+* `Select-4J.mat`: Includes time-evolution of 2-Bit i-Select Gate when B<sub>y</sub>/&hbar=-4J. B<sub>y</sub>/&hbar;=2&pi; x75.98Hz and &mu;=0.9905&omega;<sub>ZZ</sub>.
